@@ -1,0 +1,11 @@
+--- qt3d-opensource-src-5.6.0/src/3rdparty/assimp/assimp.pri.orig	2016-04-10 21:06:27.886848049 +0200
++++ qt3d-opensource-src-5.6.0/src/3rdparty/assimp/assimp.pri	2016-04-10 21:06:47.514059363 +0200
+@@ -10,7 +10,7 @@
+ 
+ win32:DEFINES+=_CRT_SECURE_NO_WARNINGS
+ 
+-contains(QT_CONFIG, system-zlib):!if(cross_compile:host_build) {
++contains(QT_CONFIG, system-zlib): {
+     if (unix|mingw):         LIBS += -lz
+     else:                    LIBS += zdll.lib
+ } else {
