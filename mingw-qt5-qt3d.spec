@@ -21,7 +21,7 @@
 
 Name:           mingw-qt5-%{qt_module}
 Version:        5.6.0
-Release:        2%{?pre:.%{pre}}%{?snapshot_date:.git%{snapshot_date}.%{snapshot_rev}}%{?dist}
+Release:        3%{?pre:.%{pre}}%{?snapshot_date:.git%{snapshot_date}.%{snapshot_rev}}%{?dist}
 Summary:        Qt5 for Windows - Qt3d component
 
 License:        GPLv3 with exceptions or LGPLv2 with exceptions
@@ -44,13 +44,11 @@ BuildRequires:  mingw32-filesystem >= 96
 BuildRequires:  mingw32-qt5-qtbase >= 5.6.0
 BuildRequires:  mingw32-qt5-qtbase-devel >= 5.6.0
 BuildRequires:  mingw32-qt5-qtdeclarative >= 5.6.0
-BuildRequires:  mingw32-qt5-qtquick1 >= 5.5.0
 
 BuildRequires:  mingw64-filesystem >= 96
 BuildRequires:  mingw64-qt5-qtbase >= 5.6.0
 BuildRequires:  mingw64-qt5-qtbase-devel >= 5.6.0
 BuildRequires:  mingw64-qt5-qtdeclarative >= 5.6.0
-BuildRequires:  mingw64-qt5-qtquick1 >= 5.5.0
 
 # This package depends on QtOpenGLExtensions which is only available as a static library
 # See http://code.qt.io/cgit/qt/qtbase.git/commit/?id=a2ddf3dfe066bb4e58de1d11b1800efcd05fb3a0
@@ -296,6 +294,9 @@ find $RPM_BUILD_ROOT -name "*.prl" -delete
 
 
 %changelog
+* Wed Feb 01 2017 Jajauma's Packages <jajauma@yandex.ru> - 5.6.0-3
+- Don't require qtquick1 for building
+
 * Sat May  7 2016 Erik van Pienbroek <epienbro@fedoraproject.org> - 5.6.0-2
 - Add BR: mingw{32,64}-qt5-qtbase-devel
 
